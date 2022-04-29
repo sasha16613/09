@@ -17,6 +17,5 @@ target_link_libraries(solver formatter_ex solver_lib)
 install(TARGETS solver RUNTIME DESTINATION solver_bin_output)
 set(CPACK_SOURCE_GENERATOR "TGZ;ZIP")
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "maintainer")
-set(MACOSX_BUNDLE TRUE)
 
 include(CPack)
