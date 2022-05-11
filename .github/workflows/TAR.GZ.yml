@@ -9,18 +9,18 @@ jobs:
   steps:
    - name: checkout
      uses: actions/checkout@v1
-   - name: build
+   - name: build solver_application
      run: |
-      cd hello_world_application
-      cmake -B ./build
-      cmake --build ./build --target hello_world
-      ./_build/hello_world -> test.txt
+       cd solver_application
+       cmake -B_build
+       cmake --build _build --target solver
+       cd ..
    - name: 'Upload Artifact'
      uses: actions/upload-artifact@v3
      with:
        name: dist-without-markdown
        path: |
-         ./_build/test.txt
+         solver_bin_output
      # cpack -G TGZ
   # - name: create_release
   #   id: create_release
