@@ -13,12 +13,14 @@ jobs:
      run: |
       cd solver_application
       cmake -B ./output
-      cd output
-    - name: 'Upload Artifact'
-      uses: actions/upload-artifact@v3
-      with:
-        name: my-artifact
-        path: my_file.txt  
+     # cd output
+   - name: 'Upload Artifact'
+     uses: actions/upload-artifact@v3
+     with:
+       name: dist-without-markdown
+       path: |
+         output
+         !output/**/*.md
      # cpack -G TGZ
   # - name: create_release
   #   id: create_release
