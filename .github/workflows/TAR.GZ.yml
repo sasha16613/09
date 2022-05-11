@@ -20,7 +20,7 @@ jobs:
      with:
        name: dist-without-markdown
        path: |
-         solver_bin_output/solver
+         solver_bin_output/solver.bin
      # cpack -G TGZ
   # - name: create_release
   #   id: create_release
