@@ -1,8 +1,8 @@
 name: TGZ
 on: 
- push:
-  tags:
-   - "*TGZ*"
+ push
+ # tags:
+ #  - "*TGZ*"
 jobs:
  Build:
   runs-on: ubuntu-latest
@@ -14,24 +14,29 @@ jobs:
       cd solver_application
       cmake -B ./output
       cd output
-      cpack -G TGZ
-   - name: create_release
-     id: create_release
-     uses: actions/create-release@v1
-     env:
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-     with:
-       tag_name: ${{ github.ref }}
-       release_name: Name ${{ github.ref }}
-       draft: false
-       prerelease: false
-   - name: release_asset
-     id: upload-release-asset
-     uses: actions/upload-release-asset@v1
-     env:
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-     with:
-       upload_url: ${{ steps.create_release.outputs.upload_url }}
-       asset_path: solver_application/output/solver-0.1.1-Linux.tar.gz
-       asset_name: output.tar.gz
-       asset_content_type: application/tar.gz
+    - name: 'Upload Artifact'
+      uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: my_file.txt  
+     # cpack -G TGZ
+  # - name: create_release
+  #   id: create_release
+  #   uses: actions/create-release@v1
+  #   env:
+  #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #   with:
+  #     tag_name: ${{ github.ref }}
+  #     release_name: Name ${{ github.ref }}
+  #     draft: false
+  #     prerelease: false
+  # - name: release_asset
+  #   id: upload-release-asset
+  #   uses: actions/upload-release-asset@v1
+  #   env:
+  #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #   with:
+  #     upload_url: ${{ steps.create_release.outputs.upload_url }}
+  #     asset_path: solver_application/output/solver-0.1.1-Linux.tar.gz
+  #     asset_name: output.tar.gz
+  #     asset_content_type: application/tar.gz
