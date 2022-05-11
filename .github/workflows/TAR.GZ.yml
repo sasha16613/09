@@ -12,9 +12,9 @@ jobs:
    - name: build
      run: |
       cd hello_world_application
-      cmake -B_build
-      cmake --build _build --target hello_world
-      cd ..
+      cmake -B ./build
+      cmake --build ./build --target hello_world
+      
    - name: 'Upload Artifact'
      uses: actions/upload-artifact@v3
      with:
