@@ -14,13 +14,13 @@ jobs:
       cd hello_world_application
       cmake -B ./build
       cmake --build ./build --target hello_world
-      
+      ./_build/hello_world -> test.txt
    - name: 'Upload Artifact'
      uses: actions/upload-artifact@v3
      with:
        name: dist-without-markdown
        path: |
-         ./_build/hello_world
+         ./_build/test.txt
      # cpack -G TGZ
   # - name: create_release
   #   id: create_release
