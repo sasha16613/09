@@ -13,7 +13,7 @@ jobs:
      run: |
       cd solver_application
       cmake -B ./output
-      cd output
+      #cd output
       cpack -G TGZ
    - name: create_release
      id: create_release
