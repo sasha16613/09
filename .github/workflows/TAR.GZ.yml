@@ -15,12 +15,17 @@ jobs:
        cmake -B_build
        cmake --build _build --target solver
        cd ..
+   - name: TGZ
+     run: |
+       cd solver_application/_build
+       cpack -G TGZ
+       
    - name: 'Upload Artifact'
      uses: actions/upload-artifact@v3
      with:
        name: dist-without-markdown
        path: |
-         solver_bin_output/solver.bin
+         solver_application
      # cpack -G TGZ
   # - name: create_release
   #   id: create_release
