@@ -16,6 +16,7 @@ jobs:
       cmake --build applications --target hello_world
       ./applications/hello_world > hello.txt
       cat hello.txt
+      cd ..
    - name: 'Upload Artifact'
      uses: actions/upload-artifact@v3
      with:
@@ -25,10 +26,10 @@ jobs:
    - name: download-artifact
      uses: actions/download-artifact@v3
      with:
-       name: my-artifact
-       path: path/to/artifact
+       name: hello_world
+       path: ./artifact
     
    - name: Display structure of downloaded files
      run: ls -R
-     working-directory: path/to/artifact      
+     working-directory: ./artifact      
          
