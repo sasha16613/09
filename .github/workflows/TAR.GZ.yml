@@ -1,8 +1,8 @@
 name: TGZ
 on: 
- push
- # tags:
- #  - "*TGZ*"
+ push:
+  tags:
+   - "*TGZ*"
 jobs:
  Build:
   runs-on: ubuntu-latest
