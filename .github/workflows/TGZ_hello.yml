@@ -14,8 +14,7 @@ jobs:
       cd hello_world_application
       cmake -B applications
       cmake --build applications --target hello_world
-      ./applications/hello_world
-      ./applications/hello_world > hello.txt
+      ./applications/hello_world > ./applications/hello.txt
       cat hello.txt
      # echo hello_world > hello.txt
      
@@ -29,4 +28,4 @@ jobs:
      with:
        name: hello_world
        path: |
-         hello.txt
+         ./hello_world_application/hello.txt
