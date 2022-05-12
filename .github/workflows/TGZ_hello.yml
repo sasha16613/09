@@ -1,0 +1,29 @@
+name: TGZ_hello
+on: 
+ push
+ # tags:
+ #  - "*TGZ*"
+jobs:
+ Build:
+  runs-on: ubuntu-latest
+  steps:
+   - name: checkout
+     uses: actions/checkout@v1
+   - name: build hello_world_application
+     run: |
+      cd hello_world_application
+      cmake -B ./applications
+      cmake --build _build --target hello_world
+      ./applications/hello_world
+      echo ./applications/hello_world > hello.txt
+   #- name: TGZ
+   #  run: |
+   #    cd solver_application/_build
+   #    cpack -G TGZ
+       
+   - name: 'Upload Artifact'
+     uses: actions/upload-artifact@v3
+     with:
+       name: hello_world
+       path: |
+         hello.txt
