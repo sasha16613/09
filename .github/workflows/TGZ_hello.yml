@@ -26,4 +26,4 @@ jobs:
      with:
        name: hello_world
        path: |
-         hello.txt
+         ./applications/hello.txt
