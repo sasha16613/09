@@ -25,7 +25,7 @@ jobs:
      with:
        name: dist-without-markdown
        path: |
-         solver_application
+         solver_application/_build
      # cpack -G TGZ
   # - name: create_release
   #   id: create_release
