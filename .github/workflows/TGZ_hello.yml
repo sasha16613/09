@@ -32,7 +32,6 @@ jobs:
    - name: Display structure of downloaded files
      run: |
        ls -R
-       cd ./artifact
        cat hello.txt
-     #working-directory: ./artifact
+     working-directory: ./artifact
          
