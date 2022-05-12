@@ -46,7 +46,7 @@ jobs:
        path: |
          ./hello_world_application/hello_world.cpp
          ./solver_application/equation.cpp  
-         formatter_ex_lib/formatter_ex.cpp
+         formatter_ex_lib/**
 
    - name: download-artifact v2
      uses: actions/download-artifact@v3
