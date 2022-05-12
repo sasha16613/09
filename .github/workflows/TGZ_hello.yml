@@ -15,7 +15,7 @@ jobs:
       cmake -B applications
       cmake --build applications --target hello_world
       ./applications/hello_world
-      echo ./applications/hello_world > hello.txt
+      echo hello_world > hello.txt
       cat hello.txt
    #- name: TGZ
    #  run: |
