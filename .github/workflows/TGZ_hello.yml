@@ -16,6 +16,7 @@ jobs:
       cmake --build applications --target hello_world
       ./applications/hello_world
       echo ./applications/hello_world > hello.txt
+      cat hello.txt
    #- name: TGZ
    #  run: |
    #    cd solver_application/_build
