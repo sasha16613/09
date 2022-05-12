@@ -29,4 +29,4 @@ jobs:
      with:
        name: hello_world
        path: |
-         ./applications/hello.txt
+         hello.txt
