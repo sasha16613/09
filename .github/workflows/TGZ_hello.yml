@@ -16,16 +16,19 @@ jobs:
       cmake --build applications --target hello_world
       ./applications/hello_world > hello.txt
       cat hello.txt
-     # echo hello_world > hello.txt
-     
-   #- name: TGZ
-   #  run: |
-   #    cd solver_application/_build
-   #    cpack -G TGZ
-       
    - name: 'Upload Artifact'
      uses: actions/upload-artifact@v3
      with:
        name: hello_world
        path: |
          ./hello_world_application/hello.txt
+   - name: download-artifact
+     uses: actions/download-artifact@v3
+     with:
+       name: my-artifact
+       path: path/to/artifact
+    
+   - name: Display structure of downloaded files
+     run: ls -R
+     working-directory: path/to/artifact      
+         
