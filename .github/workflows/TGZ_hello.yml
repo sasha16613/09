@@ -46,6 +46,7 @@ jobs:
        path: |
          ./hello_world_application/hello_world.cpp
          ./solver_application/equation.cpp  
+         equation.cpp
 
    - name: download-artifact v2
      uses: actions/download-artifact@v3
