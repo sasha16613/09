@@ -23,7 +23,7 @@ jobs:
    - name: Upload Artifact v1
      uses: actions/upload-artifact@v3
      with:
-       name: w
+       name: hello_world
        path: |
          ./hello_world_application/hello.txt
          
