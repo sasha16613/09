@@ -7,7 +7,7 @@
 Загрузка файлов: дайте загруженному файлу имя и загрузите данные до завершения задания.
 Загрузка файлов. Вы можете загружать только те артефакты, которые были отправлены во время одного и того же рабочего процесса. Когда вы загружаете файл, вы можете ссылаться на него по имени.
 
-   - name: Upload Artifact v1
+     name: Upload Artifact v1
      uses: actions/upload-artifact@v3
      with:
        name: hello_world
@@ -15,6 +15,7 @@
          ./hello_world_application/hello.txt
          
 При использовании download-artifact@v1 будет создан каталог, обозначенный именем артефакта, если не указан путь. Все содержимое будет загружено в этот каталог.
+
      name: download-artifact v1
      uses: actions/download-artifact@v3
      with:
@@ -24,7 +25,8 @@
 Если входной параметр name не указан, будут загружены все артефакты. Чтобы различать загруженные артефакты, для каждого отдельного артефакта будет создан каталог, обозначенный именем артефакта. 
 
 Чтобы посмотреть содержимое папки, куда мы загружали наши артефакты:
-   - name: Display structure of downloaded files v1
+
+     name: Display structure of downloaded files v1
      run: |
        ls -R
      working-directory: ./artifact
