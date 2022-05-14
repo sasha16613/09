@@ -37,10 +37,10 @@
 Используйте артефакты, если вы хотите сохранить файлы, созданные заданием, для просмотра после завершения рабочего процесса, например встроенные двоичные файлы или журналы сборки.
 
 # Полезные ссылки:
-https://github.com/actions/download-artifact
-https://github.com/actions/upload-artifact
-https://github.com/marketplace/actions/upload-a-build-artifact
-https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
+* https://github.com/actions/download-artifact
+* https://github.com/actions/upload-artifact
+* https://github.com/marketplace/actions/upload-a-build-artifact
+* https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
 ```
 Copyright (c) 2015-2021 The ISC Authors
 ```
