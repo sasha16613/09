@@ -6,7 +6,7 @@
 Чтобы обмениваться данными между заданиями:
 Загрузка файлов: дайте загруженному файлу имя и загрузите данные до завершения задания.
 Загрузка файлов. Вы можете загружать только те артефакты, которые были отправлены во время одного и того же рабочего процесса. Когда вы загружаете файл, вы можете ссылаться на него по имени.
-   - name: Upload Artifact v1
+     name: Upload Artifact v1
      uses: actions/upload-artifact@v3
      with:
        name: hello_world
@@ -14,7 +14,7 @@
          ./hello_world_application/hello.txt
          
 При использовании download-artifact@v1 будет создан каталог, обозначенный именем артефакта, если не указан путь. Все содержимое будет загружено в этот каталог.
-   - name: download-artifact v1
+     name: download-artifact v1
      uses: actions/download-artifact@v3
      with:
        name: hello_world
